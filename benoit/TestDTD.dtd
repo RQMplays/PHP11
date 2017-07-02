@@ -1,0 +1,17 @@
+<!ELEMENT root (Programme*) > <!-- Créer un élément Racine(root) comprenant un élément possible "Programme" -->
+<!ELEMENT Programme (Module*) > <!-- L'élément programme comprend un élément possible "Module" -->
+<!ATTLIST Programme formation CDATA #IMPLIED> <!-- L'élément Programme a un attribut "formation" en CDATA optionnel -->
+<!ELEMENT Module (Objectif, PreRequis, Materiel, Sequence*)> <!-- L'élément "Module" comprend 4 sous élément, dont 3 obligatoire. -->
+<!ATTLIST Module language CDATA ""> <!-- L'élément "Module" à un attribut "language" en CDATA de valeur de base "". (null) -->
+<!ATTLIST Module group CDATA ""> <!-- L'élément "Module" à un attribut "group" en CDATA de valeur de base "". (null) -->
+<!ELEMENT Sequence (Objectif, Code, Activite*)> <!-- L'élément "Sequence" comprend 2 élément obligatoire et 1 élément possible -->
+<!ATTLIST Sequence evaluation CDATA ""> <!-- L'élément Sequence à un attribut "evaluation" en CDATA et de valeur "".-->
+<!ELEMENT Activite (Objectif, Code, Temps?, SousObjectif?, Description?)> <!-- les éléments "Activite" comprenne 2 élément obligatoire et 3 possible mais jamais multiple.-->
+<!ATTLIST Activite done (true|false) "false"> <!-- Chaque "Activite" à un attribut "done" (fait) commencant à la valeur fausse. -->
+<!ELEMENT Objectif (#PCDATA)> <!-- Tout les éléments suivant son de type #PCDATA -->
+<!ELEMENT Description (#PCDATA)> <!-- -->
+<!ELEMENT PreRequis (#PCDATA) > <!-- -->
+<!ELEMENT Materiel (#PCDATA) > <!-- -->
+<!ELEMENT SousObjectif (#PCDATA) > <!-- -->
+<!ELEMENT Temps (#PCDATA) > <!-- -->
+<!ELEMENT Code (#PCDATA) > <!-- -->
