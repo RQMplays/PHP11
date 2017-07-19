@@ -41,6 +41,7 @@ p {
 }
 
 pre {
+		color: #000;
     background: white;
     padding: 2rem;
 }
